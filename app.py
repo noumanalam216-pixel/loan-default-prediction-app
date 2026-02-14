@@ -86,7 +86,6 @@ with col2:
     dti_ratio = st.number_input("Debt-to-Income Ratio (%)", 0.0) / 100
     loan_term = st.selectbox("Loan Term (Months)", [12, 24, 36, 48, 60])
 
-st.markdown('<div class="section-card">', unsafe_allow_html=True)
 
 #------------------ Financial Details ------------------
 
