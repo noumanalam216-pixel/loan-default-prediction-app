@@ -64,9 +64,9 @@ if not os.path.exists("models/encoders.pkl"):
         "models/encoders.pkl",
         quiet=False
     )
-model = pickle.load(open("loan_default_training.pkl", "rb"))
-scaler = pickle.load(open("scaler.pkl", "rb"))
-encoders = pickle.load(open("encoders.pkl", "rb"))
+model = pickle.load(open("models/loan_default_training.pkl", "rb"))
+scaler = pickle.load(open("models/scaler.pkl", "rb"))
+encoders = pickle.load(open("models/encoders.pkl", "rb"))
 
 #------------------ input Section --------------
 st.markdown('<div class = "section-card">', unsafe_allow_html=True)
