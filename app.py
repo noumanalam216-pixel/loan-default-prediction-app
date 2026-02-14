@@ -90,7 +90,7 @@ st.markdown('</div>', unsafe_allow_html=True)
 
 #------------------ Financial Details ------------------
 
-st.markdown('<div"class = "section-card">', unsafe_allow_html=True)
+st.markdown('<div "class = "section-card">', unsafe_allow_html=True)
 st.subheader("💳 Financial Details")
 
 num_credit_lines = st.number_input("Number of Credit Lines", 0) 
