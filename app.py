@@ -35,7 +35,35 @@ st.markdown("## 🏦 Loan Default Risk Prediction")
 st.write("Predict whether customer is Likely Default or not on Loan")
 
 #------------------ Load Model ----------------
+import gdown
+import os
 
+os.makedirs("models", exist_ok=True)
+
+MODEL_ID = "1_OJhUafKfM5MTdSRVSNvg4G21GthFTxJ"
+SCALER_ID = "1I8cNLc2CkMZpVeBWw-4xA83QFL0jnCYk"
+ENCODER_ID = "1iKYofX9vfTgX9Mtypn-F9d2l5SFQ7s2i"
+
+if not os.path.exists("models/loan_default_training.pkl"):
+    gdown.download(
+        f"https://drive.google.com/uc?id={MODEL_ID}",
+        "models/loan_default_training.pkl",
+        quiet=False
+    )
+
+if not os.path.exists("models/scaler.pkl"):
+    gdown.download(
+        f"https://drive.google.com/uc?id={SCALER_ID}",
+        "models/scaler.pkl",
+        quiet=False
+    )
+
+if not os.path.exists("models/encoders.pkl"):
+    gdown.download(
+        f"https://drive.google.com/uc?id={ENCODER_ID}",
+        "models/encoders.pkl",
+        quiet=False
+    )
 model = pickle.load(open("loan_default_training.pkl", "rb"))
 scaler = pickle.load(open("scaler.pkl", "rb"))
 encoders = pickle.load(open("encoders.pkl", "rb"))
